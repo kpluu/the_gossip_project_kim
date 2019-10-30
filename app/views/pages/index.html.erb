@@ -1,0 +1,10 @@
+<h1>Pages#index</h1>
+<p>Des gossip en veux-tu en voilà :</p>
+<% @allgossips.each do |gossip| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= gossip.title %><br/></h5>
+    <p class="card-text"><%= gossip.content %><br/><%= gossip.user.first_name %><br/></p>
+    <p><%= link_to "Voir potin", gossip_path(gossip.id), :class => "btn btn-primary" %></p>
+  </div>
+<% end %>
