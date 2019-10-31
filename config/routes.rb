@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   get '/welcome/:user_first_name', to: 'pages#welcome'
   get '/team', to: 'pages#team'
   get '/contact', to: 'pages#contact'
-  get '/gossip/:id', to: 'gossips#show', as: 'gossip'
-  get '/user/:id', to: 'users#show', as: 'user'
   resources :gossips
+  resources :users
+  resources :city
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-redirect_to root_path

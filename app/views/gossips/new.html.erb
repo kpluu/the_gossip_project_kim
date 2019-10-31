@@ -1,25 +1,28 @@
 <html>
   <body>
     <!-- ... -->
-    <form action= <%= gossips_path %> method="POST">
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-      <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
-
-      <label for="title">Title</label>
-      <input id="title" name="title" type="text" value="<%= @gossip.title %>"/>
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossip.title %>
       <br /> <br />
 
-      <label for="content">Content</label>
-      <textarea id="content" name="content"><%= @gossip.content %></textarea>
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', @gossip.content %>
       <br /> <br />
 
-      <label for="user">User</label>
-      <input id="user" name="user" type="text" value="<%= @gossip.user %>"/>
-      <br /> <br />
+      <%= submit_tag "Create Post" %>
 
-      <input type="submit" value="Create Post" />
+    <% end %>
 
-    </form>
+    <% if @gossip.errors.any? %>
+  <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+  <ul>
+    <% @gossip.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
   </body>
 </html>
