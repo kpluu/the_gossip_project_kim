@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# THE GOSSIP PROJECT
 
-Things you may want to cover:
+The Gossip Project, c'est le projet qui m'aura mise KO, mais c'est surtout le site de gossips de la communauté THP. 
 
-* Ruby version
+## GETTING STARTED & INSTALLATION
 
-* System dependencies
+You know it!!!!
+- $ git clone
+- $ bundle install
+- $ rails db:create
+- $ rails db:migrate
+- $ rails seed
 
-* Configuration
+Pour checker le site The Gossip Project, lance $rails s puis rends toi sur http://localhost:3000/.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Have fun Moussaillon, mais sache que je me suis arrêtée à la journée de mercredi 30 octobre : W6 - D3 - 2.3 Edit/Update.
