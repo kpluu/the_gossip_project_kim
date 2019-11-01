@@ -21,7 +21,7 @@ class GossipsController < ApplicationController
         puts "$" * 60
         puts "ceci est le contenu de params :"
         puts params
-        @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: 11) 
+        @gossip = Gossip.new(title: params[:title], content: params[:content]) 
         
         #user_id: 11 correspond à l'ID anonymous après généré 10 Fakers Users via seed et créé manuellement l'user anonymous dans la console.
 
@@ -50,6 +50,9 @@ class GossipsController < ApplicationController
     end
 
     def destroy
+      @gossip = Gossip.find(params[:id])
+      @gossip.destroy!
+      redirect_to root_path, :notice => "Your patient has been deleted"
     end
 
 

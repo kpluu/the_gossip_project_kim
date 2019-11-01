@@ -9,6 +9,7 @@
       <h3 class="card-text mb-5">Created on: <%= @day %>/<%= @month %>/<%= @year %> à <%= @hour %>h<%= @min %></h3>
       <p><%= link_to "See user's profile", user_path(@gossip.user.id), :class => "btn btn-success" %></p>
       <p><%= link_to "Edit gossip", edit_gossip_path(@gossip.id), :class => "btn btn-primary" %></p>
+      <%= link_to "Delete", gossip_path(@gossip), :confirm => "Are you sure?", :method => :delete %>
     </div>
   </div>  
   <p><%= link_to "Retourner à la liste de Potins", root_path, :class => "btn btn-primary" %></p>

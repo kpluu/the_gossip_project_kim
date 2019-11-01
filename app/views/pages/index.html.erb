@@ -1,10 +1,17 @@
-<h1>Pages#index</h1>
-<p>Des gossips en veux-tu en voilà :</p>
+<div class="jumbotron">
+  <h1 class="display-4">WELCOME TO THE GOSSIP PROJECT</h1>
+  <p class="text-center lead">Des Gossips en-veux-tu-en-voilà !</p>
+  <hr class="my-4">
+  <p class="lead">
+  <p><%= link_to "Create your gossip", new_gossip_path, :class => "btn btn-primary" %></p>
+  </p>
+</div>
 <% @allgossips.each do |gossip| %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= gossip.title %><br/></h5>
-    <p class="card-text"><%= gossip.content %><br/><%= gossip.user.first_name %><br/></p>
-    <p><%= link_to "Voir potin", gossip_path(gossip.id), :class => "btn btn-primary" %></p>
-  </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= gossip.title %></h5>
+        <p class="card-text"><%= gossip.content %><br/>
+        <p><%= link_to "Voir potin", gossip_path(gossip.id), :class => "btn btn-primary" %></p>
+      </div>
+    </div>
 <% end %>
