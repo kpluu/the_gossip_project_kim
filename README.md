@@ -11,7 +11,7 @@ You know it!!!!
 - $ bundle install
 - $ rails db:create
 - $ rails db:migrate
-- $ rails seed
+- $ rails db:seed
 
 Pour checker le site The Gossip Project, lance $rails s puis rends toi sur http://localhost:3000/.
 
